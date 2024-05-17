@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- White triangle on the left side -->
+    <div class="left-triangle"></div>
+
+    <!--Hey! This is the original version of Simple CSS Waves-->
+    <div class="header">
+        <!--Content before waves-->
+        <div class="inner-header flex">
+            <!--Waves Container-->
+            <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,0,0,0.7)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,0,0,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,0,0,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#ff0000" />
+                    </g>
+                </svg>
+            </div>
+            <!--Waves end-->
+        </div>
+        <!--Header ends-->
+    </div>
+    
+    <img id="centeredImage" src="robotics.jpg.png">
+
+    <script src="script.js"></script>
+
+    <!-- Modal dialogs -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal')">&times;</span>
+            <p>Placeholder content for the modal dialog.</p>
+        </div>
+    </div>
+    
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <p>Placeholder content for the modal dialog 1.</p>
+        </div>
+    </div>
+    
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <p>Placeholder content for the modal dialog 2.</p>
+        </div>
+    </div>
+    
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <p>Placeholder content for the modal dialog 3.</p>
+        </div>
+    </div>
+    
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <p>Placeholder content for the modal dialog 4.</p>
+        </div>
+    </div>
+    
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h1>Welcome to our Project!</h1>
+    <p>
+        Meet our battery-powered, Arduino-based floor vacuuming robot, designed for the College of Teacher Education Building hallways at Batangas State University. Despite budget constraints and design challenges, our robot excels in speed, navigation, and object identification.
+    </p>
+    <img src="robotics.jpg.png" alt="Arduino Robot Vacuum Cleaner">
+    <p>
+        This innovative project showcases our dedication to creating efficient and cost-effective solutions. Our robot is not just a simple vacuum cleaner; it's a smart device capable of navigating complex environments and identifying obstacles with precision. The Arduino platform provides a robust foundation, allowing us to implement sophisticated algorithms that enhance the robot's performance.
+    </p>
+    <p>
+        We faced numerous hurdles during the development process, including limited funding and technical obstacles. However, our team remained committed and resourceful, finding creative ways to overcome these challenges. The result is a highly capable robot that operates efficiently in real-world settings.
+    </p>
+    <p>
+        Our vacuuming robot is a testament to what can be achieved with ingenuity and determination. We invite you to explore our project, learn more about its features, and see how it can contribute to a cleaner and smarter educational environment at Batangas State University.
+    </p>
+        </div>
+    </div>
+    
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <p>Placeholder content for the modal dialog 6.</p>
+        </div>
+    </div>
+</body>
+</html>

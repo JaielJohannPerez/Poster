@@ -1,0 +1,204 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative; /* Establishes a positioning context for child elements */
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+    font-family: monospace; /* Set body font to monospace */
+}
+
+/* White triangle on the left side */
+.left-triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 100vh solid transparent;
+    border-left: 100vw solid white;
+    border-bottom: 100vh solid transparent;
+    z-index: 1; /* Ensure the triangle is on top of other content */
+}
+
+.waves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -7px; /* Fix for safari gap */
+    min-height: 100px;
+    max-height: 150px;
+    z-index: 2; /* Ensure waves are on top of the triangle */
+}
+
+/* Animation */
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+/* Shrinking for mobile */
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 230px;
+    }
+    .content {
+        height: 30vh;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
+
+#centeredImage {
+    width: 400px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* Ensures image behaves as a block element */
+    margin: auto; /* Auto margin horizontally centers the image */
+    z-index: 3; /* Ensure the image is on top of other content */
+}
+
+/* Style for the squares */
+.square {
+    width: 255px;
+    height: 150px;
+    border: 2px solid black; /* Change border color to yellow */
+    background-image: linear-gradient(to bottom, #4c8baf, #21f3d7); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    font-weight: bold;
+    color: #ffffff; 
+    text-shadow: -1px -1px 0 #000,  
+                  1px -1px 0 #000,
+                 -1px  1px 0 #000,
+                  1px  1px 0 #000;
+    position: absolute; /* Position absolutely inside the body */
+    opacity: 1; /* Make squares visible */
+    transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.3s; /* Add transition for smooth hover effect */
+    cursor: pointer; /* Change cursor to pointer when hovering over squares */
+    pointer-events: auto;
+    border-radius: 20px; /* Add border-radius to make it a rounded rectangle */
+    z-index: 3; /* Ensure squares are on top of other content */
+    font-family: monospace; /* Set font to monospace */
+}
+.square:nth-child(6n + 1) {
+    background-image: url('image.jpeg'); /* Set background image for first square in each group of six */
+}
+
+.square:nth-child(6n + 2) {
+    background-image: url('image1.jpg'); /* Set background image for second square in each group of six */
+    background-size: cover; /* Cover the entire square with the background image */
+    background-position: center; /* Center the background image */
+}
+
+.square:nth-child(6n + 3) {
+    background-size: cover; /* Cover the entire square with the background image */
+    background-position: center; /* Center the background image */
+    background-image: url('image2.jpeg'); /* Set background image for third square in each group of six */
+}
+
+.square:nth-child(6n + 4) {
+    background-size: cover; /* Cover the entire square with the background image */
+    background-position: center; /* Center the background image */
+    background-image: url('image4.jpeg'); /* Set background image for fourth square in each group of six */
+}
+
+.square:nth-child(6n + 5) {
+    background-size: cover; /* Cover the entire square with the background image */
+    background-position: center; /* Center the background image */
+    background-image: url('image5.jpeg'); /* Set background image for fifth square in each group of six */
+}
+
+.square:nth-child(6n + 6) {
+    background-size: cover; /* Cover the entire square with the background image */
+    background-position: center; /* Center the background image */
+    background-image: url('image6.jpeg'); /* Set background image for sixth square in each group of six */
+}
+/* Animation for squares */
+@keyframes squareAnimation {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Style for modal dialog */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position to overlay on top of the page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 3; /* Ensure modal is on top of other content */
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Fade in/out animation */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 1in;
+    bottom: 1in;
+    left: 1in;
+    right: 1in;
+    overflow: auto; /* Ensure content within the modal can be scrolled if necessary */
+        font-family: 'Courier New', monospace;  /* Change the font family */
+            font-size: 24px; /* Set default font size */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-family: monospace; /* Set font to monospace */
+}
+
+/* Hover effect for squares */
+.square:hover {
+    background-color: #dddddd; /* Change background color on hover */
+}
