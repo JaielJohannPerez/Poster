@@ -112,7 +112,7 @@ body {
     pointer-events: auto;
     border-radius: 20px; /* Add border-radius to make it a rounded rectangle */
     z-index: 3; /* Ensure squares are on top of other content */
-    font-family: monospace; /* Set font to monospace */
+    font-family: "Inter", sans-serif;
 }
 .square:nth-child(6n + 1) {
     background-image: url('image.jpeg'); /* Set background image for first square in each group of six */
@@ -186,10 +186,18 @@ body {
     left: 1in;
     right: 1in;
     overflow: auto; /* Ensure content within the modal can be scrolled if necessary */
-        font-family: 'Courier New', monospace;  /* Change the font family */
-            font-size: 24px; /* Set default font size */
-}
+    font-family: "Inter", sans-serif;
+       font-size: 24px; /* Set default font size */
+       border: 4px solid black; /* Add black border around the modal */
 
+}
+.modal-content img {
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 .close {
     position: absolute;
     top: 10px;
